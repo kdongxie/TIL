@@ -3,23 +3,68 @@
     <head>
         <meta charset="UTF-8">
         <title>동섭이 페이지</title>
+        <style>
+            /* CSS 주석을 여러줄 입력하는 법 */
+            /* 선언 블럭&규칙  */
+            /* 1. tag name */
+            header {
+                color: red;
+                font-size: 20px;
+            }
+            /* 2. select all elements */
+            * {
+                margin: 0;
+                padding: 100;
+            }
+            /* 3. id selector */
+            #foot {
+                background-color: black;
+                color: orange;
+                font-size: 40px;
+            }
+            /* 4. class selector */
+            .art1 {
+                font-size: 30px;
+                color: green;
+            }
+            .art2 {
+                font-size: 50px;
+                color: red;
+                background-color: yellow;
+            }
+
+            /* 5. 복합선택자 Parent Child selector */
+            ol > li {
+                color: aquamarine;
+            }
+            p > b {
+                color: crimson;
+            }
+            p > strong {
+                color: cornflowerblue;
+            }
+            /* 형제 선택자: 필요할 때에 검색하여 활용하기 */
+
+        </style>
+        <link rel="stylesheet" href="index.css"> //aside에 css적용하기
     </head>
-    <body id="body">
+    <body id="body" style="margin-bottom: 1000px;">
         <!--
             이곳에 원하는 것을 써넣으면 됩니다
         -->
         <header id="header">이곳은 헤더여</header>
-        <nav>이곳은 nav여</nav>
+
+        <nav style="color: blue; font-size: 30px;">이곳은 nav여</nav>
         <aside>이곳은 aside영역이며</aside>
         <section>
             Section 영역도 있고
-            <article>article영역1</article>
-            <article>article영역2</article>
-            <article>article영역3</article>
-            <article>article영역4</article>
+            <article class="art1">article영역1</article>
+            <article class="art1">article영역2</article>
+            <article class="art2">article영역3</article>
+            <article class="art2">article영역4</article>
         </section>
 
-        <footer>마지막으로 footer의 영역이 있소</footer>
+        <footer id="foot">마지막으로 footer의 영역이 있소</footer>
         <div>
             div를 통해 묶어준당
         </div>
@@ -58,9 +103,6 @@
                 <li>세번째</li>
 
             </ol>
-        </p>
-
-        <p>
             <ol>
                 <ul style="list-style-type: square;">
                     <li>치킨</li>
@@ -96,6 +138,9 @@
         <form action="index2.html">
             <input type="text" name="UserName">
             <input type="password" name="Password">
+            <input type="submit">
+        </form>
+        <form action="fake_naver.html">
             <input type="submit">
         </form>
     </body>
