@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>동섭이 페이지</title>
+    </head>
+    <body id="body">
+        <!--
+            이곳에 원하는 것을 써넣으면 됩니다
+        -->
+        <header id="header">이곳은 헤더여</header>
+        <nav>이곳은 nav여</nav>
+        <aside>이곳은 aside영역이며</aside>
+        <section>
+            Section 영역도 있고
+            <article>article영역1</article>
+            <article>article영역2</article>
+            <article>article영역3</article>
+            <article>article영역4</article>
+        </section>
+
+        <footer>마지막으로 footer의 영역이 있소</footer>
+        <div>
+            div를 통해 묶어준당
+        </div>
+
+        <!-- 시멘틱 테그가 여기까지 그저 영역이 있다는 의미만을 제공한다.-->
+
+        <!-- 제목 태그 -->
+        <h1>이곳은 나만의 영역이여</h1>
+        <h2>아주 하얀색의 배경이 맘에 들지 않는군</h2>
+        <h3>하지만 바꾸는 방법을 모르지</h3>
+        <h4>이것참 난감하군</h4>
+        <h5>점점 작아지지?</h5>
+        <h6>왜냐하면 내가 지금 바꾸고 있기 때문이야</h6>
+        <!-- 본문 태그 -->
+        <p>본문을 넣어주면 됩니다유~~~~~~~~본문보다는 문단의 개념[html은 엔터를 무시]</p>
+        <p>본문을 넣어주면 됩니다유~~~~~~~~본문보다는 문단의 개념[html은 엔터를 무시]</p>
+        <p>본문을 넣어주면 됩니다유~~~~~~~~본문보다는 문단의 개념[html은 엔터를 무시]</p>
+        <p>본문을 넣어주면 됩니다유~~~~~~~~본문보다는 문단의 개념<br>[html은 엔터를 무시]</p>
+        <p>본문을 넣어주면 됩니다유~~~~~~~~본문보다는 문단의 개념<br>[html은 엔터를 무시][br사용]</p>
+        <p>본문을 넣어주면 됩니다유~~~~~~~~<hr>본문보다는 문단의 개념<br>[html은 엔터를 무시]</p>
+        <p>본문을 넣어주면 됩니다유~~~~~~~~<hr>본문보다는 문단의 개념<br>[html은 엔터를 무시]</p>
+        <!-- 글자 꾸미기 -->
+        <p>이부분은<br><b>굵은 글자를 나타낸다</b><br>알겠느으냥</p>
+        <p>이부분은<br><strong>굵은 글자를 나타낸다</strong><br>알겠느으냥</p>
+        <p>이부분은<br><i>기울임체가 나타난다</i><br>알겠느으냥</p>
+        <p>이부분은<br><em>기울임체가 나타난다</em><br>알겠느으냥</p>
+        <p>이부분은<br><del>취소선이 나타난다</del><br>알겠느으냥</p>
+        <p>이부분은<br><u>밑줄 치기가 나타나지롱</u><br>알겠느으냥</p>
+        <p>이부분은<br><strong><i><del><u>다 합쳐볼까</u></del></i></strong><br></p>
+
+        <!-- 목록 -->
+        <p>
+            <ol>
+                <li>첫번째</li>
+                <li>두번째</li>
+                <li>세번째</li>
+
+            </ol>
+        </p>
+
+        <p>
+            <ol>
+                <ul style="list-style-type: square;">
+                    <li>치킨</li>
+                </ul>
+                <ul style="list-style-type: none;">
+                    <li>피자</li>
+                </ul>
+                <ul style="list-style-type:  circle;">
+                    <li>햄버거</li>
+                </ul>
+            </ol>
+        </p>
+        <!-- 링크 태그 -->
+        <a href="https://google.com" target="_blank">구글로 가는 겁니다</a><br>
+        <!-- target blank 는 새창을 띄워준다 -->
+        <a href="https://naver.com">네이버로 가는 겁니다</a><br>
+        <a href="css_list_style.html">CSS</a><br>
+        <a href="index2.html">Index2.html로 가보자</a><br>
+        <a href="#header">page내의 header로 이동</a><br>
+        <a href="#body">page내의 body로 이동</a><br>
+        <a href="mailto:kdongxie@naver.com">메일쓰기</a><br>
+        <!-- 파일이 다른 폴더 에 있다면 diractory를 작성해야함 -->
+
+        <!-- 미디어 파일 -->
+        <!-- 사진 img-->
+        <img src="IU.jpg" alt="아이유" width="560px" height="315px" title="아이유">
+        <!-- 비디오 video -->
+        <!-- <video src=""> 요즘 안쓰임 -->
+        <!-- 비디오 가져오기 iframe -->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tfqJ668WzUA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+        <!-- form 양식/틀 -->
+        <form action="index2.html">
+            <input type="text" name="UserName">
+            <input type="password" name="Password">
+            <input type="submit">
+        </form>
+    </body>
+</html>
