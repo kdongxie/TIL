@@ -1,9 +1,7 @@
 
-import calc
-
-print(calc.add(5,6))
+import a
 
 print(f'__name__: {__name__}')
 
 if __name__ == "__main__":
-    print("여기는 a")
+    print("여기는 b : 직접실행")
