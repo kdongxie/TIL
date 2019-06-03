@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo|Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        .font {
+            color: palevioletred;
+            font-size: 60px;
+            font-style: italic;
+            font-weight: 400; /* 100-900 */
+            font-family: 'Ubuntu','Pacifico','East Sea Dokdo','Indie Flower',Fantasy,'Times New Roman',Times,Cursive,Serif; /*san-serif*/
+        }
+
+    </style>
+</head>
+<body>
+    <p class="font">Today is {{ birthday|date:'SHORT_DATE_FORMAT'}}</p>
+    {% if month == 3 and day == 16 %}
+        <p class="font">{% now 'Y년 m월 d일 (D)' %} is your Birthday! <br> Happy Birthday!!!</p>
+    {% else %}
+        <p class="font">{% now 'Y년 m월 d일 (D)' %} is not your birthday</p>
+    {% endif %}
+</body>
+</html>

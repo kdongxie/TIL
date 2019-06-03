@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>1. 반복문</h3>
+    {% for menu in menus %}
+        <p>{{ menu }}</p>
+    {% endfor %}
+    <hr>
+    <h4>1-1 forloop.counter 사용하기</h4>
+    {% for menu in menus %}
+        <p>{{ forloop.counter }}. {{ menu }}</p>
+    {% endfor %}
+    <hr>
+    <h4>1-2 list의 내용이 있는 경우와 없는 경우</h4>
+    {% for user in empty_list %}
+        <p>{{ user }}</p>
+    {% empty %}
+        <p>현재 가입한 유저가 없습니다. </p>
+    {% endfor %}
+    <hr>
+    <h3>2. 조건문</h3>
+    {% if '자장면' in menus %}
+        <p>자장면에는 고추가루지!</p>
+    {% endif %}
+    <hr>
+    <h4>for문에 if달기</h4>
+    {% for menu in menus %}
+        {{ forloop.counter }}번째 도는중...
+        {% if forloop.first %}
+            <p>자장면+고추가루</p>
+        {% else %}
+            <p>{{ menu }}</p>
+        {% endif %}
+    {% endfor %}
+    <hr>
+    <h3>3. length filter 활용</h3>
+    {% for message in messages %}
+        {% if message|length > 5 %}
+            <p>글씨가 너무 길어요... 5글자 이상이네요...</p>
+        {% else %}
+            <p>{{ message }}, 길이는: {{ message|length }}</p>
+        {% endif %}
+    {% endfor %}
+    <hr>
+    <h3>4. lorem</h3>
+    <h4>4-1 임의의 문장</h4>
+    {% lorem %}
+    <hr>
+    <h4>4-2 3개의 단어</h4>
+    {% lorem 3 w %}
+    <hr>
+    <h4>4-3 4개의 단어 랜덤으로</h4>
+    {% lorem 4 w random %}
+    <hr>
+    <h4>4-4 2개의 문단</h4>
+    {% lorem 2 p %}
+    <hr>
+    <h3>5. 글자수 제한(truncate)</h3>
+    <p>{{ my_sentence|truncatewords:3 }}</p>
+    <p>{{ my_sentence|truncatechars:3 }}</p>
+    <p>{{ my_sentence|truncatechars:10 }}</p>
+    <hr>
+    <h3>6. 글자 관련 필터 DTL 언어</h3>
+    <p>{{ 'abc'|length }}</p>
+    <p>{{ 'ABC'|lower }}</p>
+    <p>{{ 'abc'|upper }}</p>
+    <p>{{ my_sentence|title }}</p> <!-- 앞글자만 대문자로 -->
+    <p>{{ menus|random }}</p>
+    <hr>
+    <h3>7. 연산 DTL 언어</h3>
+    <p>{{ 4|add:6 }}</p>
+    <hr>
+    <h3>8. 날짜 표현</h3>
+    {{ datetimenow }}
+    {% now 'DATETIME_FORMAT' %}<br>
+    {% now 'SHORT_DATETIME_FORMAT' %}<br>
+    {% now 'DATE_FORMAT' %}<br>
+    {% now 'SHORT_DATE_FORMAT' %}<br>
+    <hr>
+    {% now 'Y년 m월 d일 (D)' %}
+    <hr>
+    {% now 'Y' as current_year %}
+    Copyright {{ current_year }}
+    <hr>
+    {{ datetimenow|date:'SHORT_DATE_FORMAT' }}
+    <hr>
+    <h3>9. 기타</h3>
+    <p>구글 바로가기: {{ 'google.com'|urlize }}</p>
+
+</body>
+</html>
