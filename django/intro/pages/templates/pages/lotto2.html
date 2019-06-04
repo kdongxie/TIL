@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{%block body%}
+
+    <p class="font">금일의 로또 추천 번호</p>
+    <form action="/pages/picklotto/" method="GET">
+        행운의 주인공: <input type="text" name="name">
+        <input type="submit" value="제출">
+    </form>
+{%endblock%}

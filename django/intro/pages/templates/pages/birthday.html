@@ -1,0 +1,9 @@
+{%extends 'base.html'%}
+{%block body%}
+    <p class="font">Today is {{ birthday|date:'SHORT_DATE_FORMAT'}}</p>
+    {% if month == 3 and day == 16 %}
+        <p class="font">{% now 'Y년 m월 d일 (D)' %} is your Birthday! <br> Happy Birthday!!!</p>
+    {% else %}
+        <p class="font">{% now 'Y년 m월 d일 (D)' %} is not your birthday</p>
+    {% endif %}
+{%endblock%}

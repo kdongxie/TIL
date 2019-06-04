@@ -1,0 +1,13 @@
+{%extends 'base.html'%}
+{%block body%}
+
+    <p class="font">행운 추천 번호</p>
+    <p class="font">
+        이름 : {{ name }} <br><br>
+        추천번호 : {{ lotto }}<br><br>
+    </p>
+    <form action="/pages/name/">
+        <input type="submit" value="返回"><br>
+    </form>
+
+{%endblock%}
