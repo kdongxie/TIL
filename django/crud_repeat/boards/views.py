@@ -30,7 +30,7 @@ def delete(request, pk):
 
 def edit(request, pk):
     board = Board.objects.get(pk=pk)
-    context = {'boards': board}
+    context = {'board': board}
     return render(request, 'boards/edit.html/', context)
 
 def update(request, pk):
@@ -38,4 +38,4 @@ def update(request, pk):
     board.title = request.POST.get('title')
     board.content = request.POST.get('content')
     board.save()
-    return redirect(f'boards/{board.pk}/')
+    return redirect(f'/boards/{board.pk}/')
