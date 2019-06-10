@@ -1,0 +1,14 @@
+{% extends 'boards/base.html' %}
+{% block body %}
+<h1 class="text-center">상세 페이지</h1>
+<hr>
+<p class="text-center">{{board.pk}} 번째 글</p>
+<p class="text-center">글 제목: {{board.title}}</p>
+<p class="text-center">글 내용: {{board.content}}</p>
+<p class="text-center">작성시각: {{board.created_at}}</p>
+<p class="text-center">수정시각: {{board.updated_at}}</p>
+<hr>
+<a href="/boards/{{board.pk}}/edit/">[글 수정하기]</a><br>
+<a href="/boards/{{board.pk}}/delete/">[글 삭제하기]</a><br>
+<a href="/boards/">[메인으로가기]</a>
+{% endblock %}

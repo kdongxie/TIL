@@ -1,0 +1,15 @@
+{% extends 'boards/base.html'%}
+{%block body%}
+<h1 class="text-center">게시글 수정하기</h1>
+<form action="/boards/{{board.pk}}/update/" method="POST">
+    {% csrf_token %}
+    <hr>
+    <label for="title" >제목</label><br>
+    <input type="text" name="title" id="title" value="{{board.title}}"><br>
+    <hr>
+    <label for="content" >내용</label><br>
+    <textarea name="content" id="content" cols="30" rows="10" >{{board.content}}</textarea><br>
+    <hr>
+    <input type="submit" name="수정" >
+</form>
+{%endblock%}

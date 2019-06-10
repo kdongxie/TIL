@@ -646,3 +646,5 @@ def lotto(request):
 
 ![image](https://user-images.githubusercontent.com/46669551/58789111-51c21b00-8628-11e9-8401-55bb0f40a018.png)
 
+Class [사람] > Instance [너,나,그,그녀] > Attributes [이름,키...] (Values) > Method [밥먹기, 서기, 자기...]
+

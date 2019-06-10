@@ -1,0 +1,14 @@
+{% extends 'boards/base.html'%}
+{% block body %}
+<h1 class="text-center">Index Page</h1>
+<hr>
+{% for board in boards %}
+    <h5 class="text-center">{{ board.pk }}번째 글</h5>
+    <p class="text-center">제목:  {{ board.title }}</p>
+    <a href='/boards/{{board.pk}}/'>[{{board.pk}} 번 글 상세 보기]</a>
+{%endfor%}
+<form action="/boards/new">
+    <input type="submit" value="글쓰기">
+</form>
+
+{% endblock %}
