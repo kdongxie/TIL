@@ -1,0 +1,25 @@
+
+{%extends 'movies/base.html'%}
+{%block body%}
+<form action="" method="POST">
+    {%csrf_token%}
+    <label for="title">타이틀</label>
+    <input type="text" id="title" name="title"><br>
+    <label for="title_origin">본제목</label>
+    <input type="text" id="title_origin" name="title_origin"><br>
+    <label for="vote_count">투표수</label>
+    <input type="number" id="vote_count" name="vote_count"><br>
+    <label for="open_date">개봉일</label>
+    <input type="date" id="open_date" name="open_date"><br>
+    <label for="genre">장르</label>
+    <input type="text" id="genre" name="genre"><br>
+    <label for="score">점수</label>
+    <input type="number" min="0" oninput="validity.valid||(value='');" step="0.5" id="score" name="score"><br>
+    <label for="poster_url">포스터 주소</label>
+    <input type="text" id="poster_url" name="poster_url"><br>
+    <label for="description">설명</label>
+    <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
+    <input type="submit" value="작성하기">
+</form>
+<a href="{% url 'movies:index' %}">돌아가기</a>
+{%endblock%}

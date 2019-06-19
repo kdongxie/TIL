@@ -1,17 +1,23 @@
 {% extends 'boards/base.html' %}
-
+{% load static %}
 {% block body %}
-<br><br><br><br><br>
-<h1 class="text-center">Boards</h1>
+
+<h1 class="text-center">INDEX</h1>
+<hr>
+<img src="{% static 'boards/images/dog.jpg' %}" alt="dog">
+
 <hr>
 {% for board in boards %}
     <p class="text-center">글 번호: {{ board.pk }}</p>
     <p class="text-center">글 제목: {{ board.title }}</p>
-    <a href='/boards/{{board.pk}}/'>[글 상세 보기]</a>
+    <center>
+    <a href="{% url 'boards:detail' board.pk %}">[글 상세 보기]</a>
+    </center>
     <hr>
 {% endfor %}
-    <form action="/boards/new">
+<center>
+    <form action="{% url 'boards:new' %}">
     <input type="submit" value="글쓰기">
     </form>
-
+</center>
 {% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'movies/base.html' %}
+
+{% block body %}
+<style>
+body { margin:0; }
+table {
+  margin: 5px 0 0;
+  border-collapse:collapse;
+}
+thead {
+  position: fixed;
+  top: 0;
+  background: pink;
+}
+th {
+  border:1px solid silver;
+  height: 30px;
+}
+td { border:1px solid silver; }
+th:nth-of-type(1), td:nth-of-type(1) { width:50px; }
+th:nth-of-type(2), td:nth-of-type(2) { width:250px; }
+th:nth-of-type(3), td:nth-of-type(3) { width:350px; }
+th:nth-of-type(4), td:nth-of-type(4) { width:150px; }
+th:nth-of-type(5), td:nth-of-type(5) { width:50px; }
+th:nth-of-type(6), td:nth-of-type(6) { width:80px; }
+tr:nth-child(even) { background: #eee; }
+</style>
+<center>
+    <br><br>
+    {%for movie in movies%}
+    <table>
+
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>영화제목</th>
+                <th>장르</th>
+                <th>개봉일자</th>
+                <th>점수</th>
+                <th>링크</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{movie.id}}</td>
+                <td>{{movie.title}}</td>
+                <td>{{movie.genre}}</td>
+                <td>{{movie.open_date}}</td>
+                <td>{{movie.score}}</td>
+                <td><a href="{% url 'movies:detail' movie.pk %}">[상세 보기]</a></td>
+            </tr>
+        </tbody>
+    </table>
+    {%endfor%}
+    <form action="{% url 'movies:new' %}" method="GET">
+        <hr>
+    <input type="submit" value="작성하기">
+    </form>
+</center>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "movies/base.html" %}
+{% load static %}
+{% block body %}
+<style>
+container>div {
+        margin: 30px;
+        border: 30px solid #008000;
+        padding: 30px;
+      }
+</style>
+<center>
+    <h1 class="text-center">DETAIL</h1>
+    <h2 class="text-center">{{ movie.pk }} 번째 영화</h2>
+    <hr>
+    <p class="text-center">영화 제목: {{movie.title}}</p>
+    <p class="text-center">영화 원 제목: {{movie.title_origin}}</p>
+    <p class="text-center">영화 투표 수: {{movie.vote_count}}</p>
+    <p class="text-center">영화 개봉일: {{movie.open_date}}</p>
+    <p class="text-center">영화 장르: {{movie.genre}}</p>
+    <p class="text-center">영화 점수: {{movie.score}}</p>
+    <hr>
+    <p class="text-center"><<영화 포스터>></p>
+    <container>
+        <div>
+            <img src="{{ movie.poster_url }}" alt="{{movie.title}}">
+        </div>
+    </container>
+    <<영화 줄거리>>
+    <container>
+        <div>
+            <p class="text-center">{{movie.description}}</p>
+        </div>
+    </container>
+    <hr>
+
+    <a href="{% url 'movies:edit' movie.pk %}">[글 수정]</a><br>
+    <a href="{% url 'movies:index' %}">[메인 페이지]</a><br>
+
+    <form action="{% url 'movies:delete' movie.pk %}" method="POST">
+        {%csrf_token%}
+        <input type="submit" value="삭제">
+    </form>
+</center>
+{% endblock %}

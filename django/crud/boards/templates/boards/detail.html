@@ -1,4 +1,5 @@
 {% extends "boards/base.html" %}
+{% load static %}
 {% block body %}
     <h1 class="text-center">DETAIL</h1>
     <h2 class="text-center">{{ board.pk }} 번째 글</h2>
@@ -7,8 +8,47 @@
     <p class="text-center">글 내용: {{board.content}}</p>
     <p class="text-center">글 작성 시각: {{board.created_at}}</p>
     <p class="text-center">글 수정 시각: {{board.updated_at}}</p>
-    <a href="/boards/{{board.pk}}/delete/">[글 삭제]</a><br>
-    <a href="/boards/{{board.pk}}/edit/">[글 수정]</a><br>
-    <a href="/boards/">[메인 페이지]</a>
+<hr>
+    <center>
+    <form action="{% url 'boards:comments_create' board.pk %}" method="POST">
+        {%csrf_token%}
+        <input type="text" name="content" style= width:850px;>
+        <input type="submit" value="댓글작성">
+    </form>
+    </center>
+    <center>
+    <hr>
+        <p><strong>댓글 목록 | 현재 댓글 갯수: {{ comments|length }} 개</strong></p>
+        {% for comment in comments %}
+            <li>{{ comment.content }}</li>
+            <a href="{% url 'boards:comments_edit' board.pk comment.pk %}">[댓글 수정]</a><br>
+            <form action="{% url 'boards:comments_delete' comment.board.id comment.pk %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="댓글 삭제">
 
+        {% empty %}
+            <p>현재 댓글이 없습니다. </p>
+</form>
+        {% endfor %}
+    </center>
+    <hr>
+    <center>
+        {% if board.image %}
+            <h3><b>원본 이미지</b></h3>
+            <img src="{{ board.image.url }}" alt="{{ board.image }}">
+        {% endif %}
+            <p><b>사진이 존재하지 않습니다.</b></p>
+    <hr>
+    <a href="{% url 'boards:edit' board.pk %}">[글 수정]</a><br>
+    <a href="{% url 'boards:index' %}">[메인 페이지]</a><br>
+
+
+    <form action="{% url 'boards:delete' board.pk %}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="삭제">
+    </form>
+        <hr>
+
+
+    </center>
 {% endblock %}

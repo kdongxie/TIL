@@ -1,0 +1,18 @@
+{% extends 'boards/base.html' %}
+
+{% block body %}
+<br><br>
+<h1 class="text-center">New</h1>
+<hr>
+<center>
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="title">글 제목</label><br>
+    <input type="text" name="title" id="title"><br>
+    <label for="content">글 내용</label><br>
+    <textarea name="content" id="content"></textarea><br>
+    <input type="submit" value="저장">
+</form>
+<a href="{% url 'boards:index' %}">[메인으로 돌아가기]</a>
+</center>
+{% endblock %}

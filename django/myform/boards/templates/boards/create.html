@@ -1,0 +1,11 @@
+{% extends 'boards/base.html' %}
+{% block body %}
+    <h1>CREATE</h1>
+    <hr>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="저장">
+</form>
+<a href="{% url 'boards:index' %}">[메인페이지]</a>
+{% endblock %}

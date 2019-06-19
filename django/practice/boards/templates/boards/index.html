@@ -1,0 +1,10 @@
+{% extends 'boards/base.html' %}
+{% block body %}
+<h1 class="text-center">IndexPage</h1>
+<hr>
+<center>
+    <form action="{% url 'boards:new' %}">
+    <input type="submit" value="글쓰기">
+    </form>
+</center>
+{% endblock %}
